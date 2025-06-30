@@ -71,7 +71,7 @@ return (
                 </p>
                 </div>
 
-                <div className="mt-5">
+                {/* <div className="mt-5">
                 <h3 className="text-md font-semibold text-gray-800 mb-2 flex items-center gap-2">
                     <FaClipboardList className="text-orange-500" />
                     Services
@@ -93,7 +93,7 @@ return (
                     )
                     )}
                 </ul>
-                </div>
+                </div> */}
             </div>
             </div>
         );
