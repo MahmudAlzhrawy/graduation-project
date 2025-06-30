@@ -94,9 +94,7 @@ interface CreateAppointmentButtonState {
   userId: number;
 }
 
-if (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY === undefined) {
-  throw new Error("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not defined");
-}
+
 const DoctorDetailsClientComponent = (props: Props) => {
   const [createAppointmentButtonClick, setCreateAppointmentButtonClick] =
   useState<CreateAppointmentButtonState>({
