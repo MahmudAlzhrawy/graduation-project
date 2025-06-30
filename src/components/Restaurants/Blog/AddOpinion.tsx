@@ -8,8 +8,9 @@ import { store } from "@/lib/store";
 interface props {
   restoId: any;
   setAc: Dispatch<SetStateAction<boolean>>;
+  setRefetch:Dispatch<SetStateAction<number>>
 }
-const ReviewForm = ({ restoId, setAc }: props) => {
+const ReviewForm = ({ restoId, setAc,setRefetch }: props) => {
   const formik = useFormik({
     initialValues: {
       value: 0,
@@ -55,6 +56,8 @@ const ReviewForm = ({ restoId, setAc }: props) => {
             }
           );
           if (res.ok) {
+            setRefetch((prev) => prev + 1);
+            setAc(false);
             Toast.fire({
               icon: "success",
               title: "Assessed successfully",

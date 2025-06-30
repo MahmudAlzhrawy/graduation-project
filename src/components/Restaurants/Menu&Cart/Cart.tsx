@@ -1,19 +1,9 @@
 "use client";
-
-import { ManageRestoContext } from "@/app/Context/ManageRestoContext";
 import { useContext, useEffect, useState } from "react";
-import CheckoutService from "../Orders/CheckOut";
+import { ManageRestoContext } from "@/app/Context/ManageRestoContext";
 import { store } from "@/lib/store";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-import convertToSubCurrency from "@/ExternalFunctions/convertToSubCurrency";
-const stripePromise = await loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
-);
+import CheckoutService from "../Orders/CheckOut";
 
-if (process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY === undefined) {
-  throw new Error("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY is not defined");
-}
 interface Meal {
   id: number;
   quantity: number;
@@ -28,40 +18,30 @@ interface Meal {
 export default function CartItems({ restoId }: any) {
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutclick, setCheckoutClick] = useState<boolean>(false);
-  const { cartItems, removeItemFromCart } =
-    useContext(ManageRestoContext);
+  const { cartItems, removeItemFromCart } = useContext(ManageRestoContext);
 
   const filterd = cartItems.filter((item) => item.restaurantId == restoId);
   const mealIds = filterd.map((meal) => meal.id);
+
   useEffect(() => {
     setTotalPrice(
       filterd.reduce((total, item) => total + item.price * item.quantity, 0)
     );
   }, [cartItems]);
+
   return (
     <>
       {checkoutclick && (
-        <Elements
-          stripe={stripePromise}
-          options={{
-            mode: "payment",
-            amount: convertToSubCurrency(totalPrice),
-            currency: "usd",
-          }}
-        >
-          <CheckoutService
-            totalPrice={totalPrice}
-            restoId={restoId}
-            filterd={filterd}
-            mealIds={mealIds}
-            setCheckoutClick={setCheckoutClick}
-          />
-        </Elements>
+        <CheckoutService
+          totalPrice={totalPrice}
+          restoId={restoId}
+          filterd={filterd}
+          mealIds={mealIds}
+          setCheckoutClick={setCheckoutClick}
+        />
       )}
-      <div
-        className={`main   my-10 `}
-        style={filterd.length === 0 ? { height: "500px" } : {}}
-      >
+
+      <div className={`main my-10`} style={filterd.length === 0 ? { height: "500px" } : {}}>
         <h1
           className="text-5xl text-gray-400 font-bold font-serif tracking-tighter text-center italic"
           style={filterd.length === 0 ? { marginBottom: "50px" } : {}}
@@ -95,6 +75,7 @@ export default function CartItems({ restoId }: any) {
               </button>
             </div>
           )}
+
           {filterd.length > 0 ? (
             <div className="overflow-scroll h-80">
               {filterd.map((item: Meal, index) => (
@@ -103,17 +84,15 @@ export default function CartItems({ restoId }: any) {
                   className={`${
                     index % 2 === 0 ? "bg-gray-100" : "bg-blue-100"
                   } 
-                    container rounded-lg hover:brightness-90 px-4 py-3 w-4/5 mx-auto 
-                    flex items-center gap-4 my-2`}
+                  container rounded-lg hover:brightness-90 px-4 py-3 w-4/5 mx-auto 
+                  flex items-center gap-4 my-2`}
                 >
-                  {/* صورة الوجبة */}
                   <img
                     src={`https://citypulse.runasp.net${item.mealImage}`}
                     alt={item.mealName}
                     className="rounded-full w-[100px] h-[100px] object-cover border-2 border-gray-300"
                   />
 
-                  {/* تفاصيل الوجبة */}
                   <div className="flex-1">
                     <h3 className="text-lg font-semibold text-gray-800">
                       {item.mealName}
@@ -135,7 +114,6 @@ export default function CartItems({ restoId }: any) {
                     </p>
                   </div>
 
-                  {/* الأزرار */}
                   <div className="flex flex-col gap-2">
                     <button
                       className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-200"
@@ -145,12 +123,6 @@ export default function CartItems({ restoId }: any) {
                     >
                       Remove
                     </button>
-                    {/* <button 
-                            className="bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition duration-200"
-                            onClick={() => clearCart()}
-                        >
-                            Clear Cart
-                        </button> */}
                   </div>
                 </div>
               ))}

@@ -21,6 +21,9 @@ export const AccountDropDownList = ({ sendFromChild, sendFromChildTwo }: Props) 
 
   const handleLogout = () => {
     dispatchStore(logout());
+    localStorage.removeItem("userId");
+    localStorage.removeItem("Token");
+    localStorage.removeItem("user");
     sendFromChild(false);
   };
 

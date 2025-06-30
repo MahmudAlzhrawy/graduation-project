@@ -17,10 +17,10 @@ export default function Footer() {
     { name: "Restaurant", link: "/services/restaurants" },
   ];
   const About = [
-    { name: "About us", link: "/about" },
     { name: "Contact us", link: "/contact-us" },
-    { name: "Terms and Conditions", link: "/terms" },
-    { name: "Privacy Policy", link: "/privacy" },
+    { name: "About us", link: "#" },
+    { name: "Terms and Conditions", link: "#" },
+    { name: "Privacy Policy", link: "#" },
   ];
   const tex = "City Guide |";
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function Footer() {
             <FaTwitter style={{ color: "#1DA1F2", fontSize: "2rem" }} />
           </div>
           <div className="text-lg mt-[10%] font-medium text-gray-500">
-            assiu5damaat@gmail.com
+            cityguide@gmail.com
           </div>
         </div>
         <div className="services">

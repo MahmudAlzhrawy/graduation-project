@@ -94,9 +94,9 @@ export default function Navbar() {
                 sendFromServicesDropDownList={sendFromServicesDropDownList}
               />
             )}
-            <li className="ml-20 text-cyan-900 text-2xl font-serif font-bold italic hover:text-cyan-400 duration-500 ease-in-out">
+            {/* <li className="ml-20 text-cyan-900 text-2xl font-serif font-bold italic hover:text-cyan-400 duration-500 ease-in-out">
               <Link href="/about">About</Link>
-            </li>
+            </li> */}
             <li className="ml-20 text-cyan-900 text-2xl font-serif font-bold italic hover:text-cyan-400 duration-500 ease-in-out">
               <Link href="/contact-us">Contact</Link>
             </li>

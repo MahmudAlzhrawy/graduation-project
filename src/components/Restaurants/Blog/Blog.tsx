@@ -9,7 +9,11 @@ interface review {
   review: string;
   ratingDate: string;
 }
-export default function Blog({ restoId }: { restoId: any }) {
+interface props{
+  restoId:any,
+  refetch:number
+}
+export default function Blog({ restoId, refetch }: props) {
   const [review, setReviews] = useState<review[]>([]);
   useEffect(() => {
     console.log("fetching reviews for restaurant with ID:", restoId);
@@ -36,7 +40,7 @@ export default function Blog({ restoId }: { restoId: any }) {
       }
     };
     blogData();
-  }, [restoId]);
+  }, [restoId,refetch]);
   return (
     <div className="main mt-2">
       <div className="container w-[99%] mx-auto ">

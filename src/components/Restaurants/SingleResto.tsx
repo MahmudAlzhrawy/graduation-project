@@ -51,14 +51,14 @@ useEffect(() => {
 
     fetchdata();
 }, [restoId]);
-
+const[refetch,setRefetch]=useState<number>(0);
 return(<>
 
     <div className="mian border-4 shadow-md max-w-[70%]  mx-auto ">
         <div className="Addblog">
-            
-            {addReview && <ReviewForm setAc={setAc} restoId={restoId}/>}
-            
+
+            {addReview && <ReviewForm setRefetch={setRefetch} setAc={setAc} restoId={restoId}/>}
+
         </div>
         <div className="cardcontent p-4">
         <div className="pt-1 pb-4 hover:brightness-75 duration-500 overflow-hidden">
@@ -88,7 +88,7 @@ return(<>
         <div className="border mt-5 w-full ">
         <button className="btn mt-4" onClick={()=>{setAc(el=>!el)}}>Add Review</button>
             <h2 className="text-5xl text-gray-300 font-serif font-bold tracking-tighter text-center my-10">Reviews</h2>
-                <Blog restoId={restoId}/>
+                <Blog refetch={refetch} restoId={restoId}/>
         </div>
         </>
 )
