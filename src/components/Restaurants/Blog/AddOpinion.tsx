@@ -31,8 +31,7 @@ const ReviewForm = ({ restoId, setAc }: props) => {
         `userId is ${userId} && restoId is ${restoId} && value is ${values.value} && values review are ${values.reviews}`
       );
       if (
-        store.getState().auth.userToken !== null &&
-        store.getState().auth.user?.roles === "User"
+        store.getState().auth.userToken !== null 
       ) {
         try {
           console.log("Submitted data:", values);

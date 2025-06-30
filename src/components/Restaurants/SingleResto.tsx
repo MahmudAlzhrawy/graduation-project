@@ -64,7 +64,7 @@ return(<>
         <div className="pt-1 pb-4 hover:brightness-75 duration-500 overflow-hidden">
             <img
             className=" h-[300px] hover:scale-110 duration-700 ease-in-out w-full  "
-                src={`http://citypulse.runasp.net/images/Restaurants/${restaurant?.restaurantImage}`}
+                src={`https://citypulse.runasp.net/images/Restaurants/${restaurant?.restaurantImage}`}
                 alt={restaurant?.restaurantName}
             />
             <p className="text-violet-950 flex text-xl  mt-2"><span><FaLocationDot/></span>{restaurant?.city}</p>
