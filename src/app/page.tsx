@@ -8,11 +8,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 interface servi {
   id: number;
   imgUrl: string;
   Name: string;
   Content: string;
+  link: string;
 }
 const Gallery = dynamic(() => import("@/components/Gallary"), { ssr: false });
 export default function Home() {
@@ -165,6 +167,7 @@ export default function Home() {
       >
         {service.map((serv: servi) => {
           return (
+            <Link href={serv.link}>
             <div
               key={serv.id}
               className={`rounded-md relative z-50  ${
@@ -189,6 +192,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            </Link>
           );
         })}
       </div>
