@@ -28,7 +28,7 @@ interface Meal {
 export default function CartItems({ restoId }: any) {
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutclick, setCheckoutClick] = useState<boolean>(false);
-  const { cartItems, removeItemFromCart, clearCart } =
+  const { cartItems, removeItemFromCart } =
     useContext(ManageRestoContext);
 
   const filterd = cartItems.filter((item) => item.restaurantId == restoId);
@@ -108,7 +108,7 @@ export default function CartItems({ restoId }: any) {
                 >
                   {/* صورة الوجبة */}
                   <img
-                    src={`http://citypulse.runasp.net${item.mealImage}`}
+                    src={`https://citypulse.runasp.net${item.mealImage}`}
                     alt={item.mealName}
                     className="rounded-full w-[100px] h-[100px] object-cover border-2 border-gray-300"
                   />

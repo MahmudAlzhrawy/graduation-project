@@ -58,7 +58,7 @@ export default function Menu({ restoId }: any) {
                 <div className="img h-48 overflow-hidden rounded-t-lg">
                   <img
                     className="h-full w-full object-cover"
-                    src={`http://citypulse.runasp.net${item.mealImage}`}
+                    src={`https://citypulse.runasp.net${item.mealImage}`}
                     alt="Notfound"
                   />
                 </div>
