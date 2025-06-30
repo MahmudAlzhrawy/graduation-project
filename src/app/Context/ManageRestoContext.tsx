@@ -111,7 +111,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedCart = localStorage.getItem("cart");
-      const storedToken = localStorage.getItem("Token");
+      const storedToken = localStorage.getItem("userToken");
       const storedUserId = localStorage.getItem("userId");
 
       setCartItems(storedCart ? JSON.parse(storedCart) : []);

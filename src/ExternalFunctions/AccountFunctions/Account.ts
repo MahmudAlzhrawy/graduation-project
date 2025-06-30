@@ -47,6 +47,8 @@ export const checkCredentialsExistInSystem: (
       if (response.ok) {
         const data = await response.json();
         const Token: string = data.token;
+        localStorage.setItem("userToken", Token);
+        localStorage.setItem("userId", data.id);
         const user: userObject = {
           id: data.id,
           roles: data.roles,
