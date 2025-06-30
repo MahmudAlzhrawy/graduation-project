@@ -288,76 +288,76 @@ const { SearchDoctors, setSearchDoctors } = context;
       }
     >
       <div
-        ref={doctorfilterRef}
-        className={
-          scrollPosition >= 2400 &&
-          visiableCount === 5 &&
-          getAllDoctors.length >= 1 &&
-          openTitle &&
-          openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-3 z-10"
-            : scrollPosition >= 2400 &&
-              visiableCount === 5 &&
-              getAllDoctors.length >= 1 &&
-              openTitle &&
-              !openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-32 z-10"
-            : scrollPosition >= 2400 &&
-              visiableCount === 5 &&
-              getAllDoctors.length >= 1 &&
-              !openTitle &&
-              openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-20 z-10"
-            : scrollPosition >= 435 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              !openTitle &&
-              !openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
-            : scrollPosition >= 300 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              openTitle &&
-              openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
-            : scrollPosition >= 220 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              openTitle &&
-              openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
-            : scrollPosition >= 300 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              openTitle &&
-              !openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[23px] z-10"
-            : scrollPosition >= 435 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              !openTitle &&
-              openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
-            : scrollPosition >= 230 &&
-              visiableCount === 1 &&
-              getAllDoctors.length >= 1 &&
-              !openTitle &&
-              openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
-            : scrollPosition >= 550 && !openTitle && !openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[300px] z-10"
-            : scrollPosition >= 1 && openTitle && getAllDoctors.length === 0
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
-            : scrollPosition >= 550
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[250px] z-10"
-            : scrollPosition >= 550 && openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
-            : scrollPosition < 550 && openExaminationFee
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-5 z-10"
-            : scrollPosition >= 550 && openTitle
-            ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[50px] z-10"
-            : "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed z-10"
-        }
+       ref={doctorfilterRef}
+  className={
+    scrollPosition >= 2400 &&
+    visiableCount === 5 &&
+    getAllDoctors.length >= 1 &&
+    openTitle &&
+    openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-3 z-10"
+      : scrollPosition >= 2400 &&
+        visiableCount === 5 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-32 z-10"
+      : scrollPosition >= 2400 &&
+        visiableCount === 5 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-20 z-10"
+      : scrollPosition >= 435 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
+      : scrollPosition >= 300 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition >= 220 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
+      : scrollPosition >= 300 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[23px] z-10"
+      : scrollPosition >= 435 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
+      : scrollPosition >= 230 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
+      : scrollPosition >= 550 && !openTitle && !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[300px] z-10"
+      : scrollPosition >= 1 && openTitle && getAllDoctors.length === 0
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition >= 550
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[250px] z-10"
+      : scrollPosition >= 550 && openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition < 550 && openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-5 z-10"
+      : scrollPosition >= 550 && openTitle
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[50px] z-10"
+      : "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed z-10"
+  }
       >
         <h3 className="text-gray-400 text-sm flex flex-row items-center justify-center">
           <span
@@ -619,144 +619,6 @@ const { SearchDoctors, setSearchDoctors } = context;
               </div>
             </div>
             <hr className="text-gray-600 h-2" />
-            {/* <div className="flex flex-col justify-center w-[80%] mx-auto my-5 hover:cursor-pointer">
-              <div
-                className="flex flex-row items-center justify-between mb-5"
-                onClick={() => setOpenGender(!openGender)}
-              >
-                <div className="flex flex-row gap-x-4">
-                  <div className="flex flex-row gap-x-0 text-3xl">
-                    <CgGenderFemale className="" />
-                    <CgGenderMale className="" />
-                  </div>
-                  <h4>Gender</h4>
-                </div>
-                {openGender ? (
-                  <IoMdArrowDropdown className="text-3xl" />
-                ) : (
-                  <IoMdArrowDropright className="text-3xl" />
-                )}
-              </div>
-              <div
-                className={
-                  openGender
-                    ? "flex flex-col gap-y-4 opacity-100 max-h-32 transition-all duration-500 ease-in-out"
-                    : "flex flex-col gap-y-4 opacity-0 max-h-0 transition-all duration-500 ease-in-out"
-                }
-              >
-                <div
-                  onClick={() => {
-                    if (FemalecheckboxRef.current) {
-                      if (FemalecheckboxRef.current.checked) {
-                        FemalecheckboxRef.current.checked = false;
-                        setSearchDoctors({
-                          ...SearchDoctors,
-                          Gender: SearchDoctors.Gender.filter(
-                            (gender: string) => gender !== "Female"
-                          ),
-                        });
-                      } else {
-                        FemalecheckboxRef.current.checked = true;
-                        if (!SearchDoctors.Gender.includes("Female"))
-                          setSearchDoctors({
-                            ...SearchDoctors,
-                            Gender: [...SearchDoctors.Gender, "Female"],
-                          });
-                      }
-                    }
-                  }}
-                  className="flex flex-row items-center"
-                >
-                  <input
-                    onClick={(event) => {
-                      if (event.currentTarget.checked) {
-                        event.currentTarget.checked = false;
-                        setSearchDoctors({
-                          ...SearchDoctors,
-                          Gender: SearchDoctors.Gender.filter(
-                            (gender: string) => gender !== "Female"
-                          ),
-                        });
-                      } else {
-                        event.currentTarget.checked = true;
-                        if (!SearchDoctors.Gender.includes("Female"))
-                          setSearchDoctors({
-                            ...SearchDoctors,
-                            Gender: [...SearchDoctors.Gender, "Female"],
-                          });
-                      }
-                    }}
-                    ref={FemalecheckboxRef}
-                    id="female"
-                    type="checkbox"
-                    value={GenderValues.Female}
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                  />
-                  <label
-                    htmlFor="female"
-                    className="ms-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                  >
-                    Female
-                  </label>
-                </div>
-                <div
-                  onClick={() => {
-                    if (MalecheckboxRef.current) {
-                      if (MalecheckboxRef.current.checked) {
-                        MalecheckboxRef.current.checked = false;
-                        setSearchDoctors({
-                          ...SearchDoctors,
-                          Gender: SearchDoctors.Gender.filter(
-                            (gender: string) => gender !== "Male"
-                          ),
-                        });
-                      } else {
-                        MalecheckboxRef.current.checked = true;
-                        if (!SearchDoctors.Gender.includes("Male"))
-                          setSearchDoctors({
-                            ...SearchDoctors,
-                            Gender: [...SearchDoctors.Gender, "Male"],
-                          });
-                      }
-                    }
-                  }}
-                  className="flex flex-row items-center"
-                >
-                  <input
-                    onClick={(event) => {
-                      if (event.currentTarget.checked) {
-                        event.currentTarget.checked = false;
-                        setSearchDoctors({
-                          ...SearchDoctors,
-                          Gender: SearchDoctors.Gender.filter(
-                            (gender: string) => gender !== "Male"
-                          ),
-                        });
-                      } else {
-                        event.currentTarget.checked = true;
-                        if (!SearchDoctors.Gender.includes("Male"))
-                          setSearchDoctors({
-                            ...SearchDoctors,
-                            Gender: [...SearchDoctors.Gender, "Male"],
-                          });
-                      }
-                    }}
-                    ref={MalecheckboxRef}
-                    id="male"
-                    type="checkbox"
-                    value={GenderValues.Male}
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                  />
-                  <label
-                    htmlFor="male"
-                    className="ms-2 text-sm font-medium text-gray-600 dark:text-gray-300"
-                  >
-                    Male
-                  </label>
-                </div>
-              </div>
-            </div> */}
-            {/* <hr className="text-gray-600 h-2" /> */}
             <div className="flex flex-col justify-center w-[80%] mx-auto my-5">
               <div
                 className="flex flex-row items-center justify-between mb-5 hover:cursor-pointer"
