@@ -168,7 +168,22 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
     localStorage.removeItem("cart");
     setCartItems([]);
   };
-
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const res = await fetch(`https://citypulse.runasp.net/api/School/ALlcities`);
+        if (res.ok) {
+          const data = await res.json();
+          setCity(data.$values);
+        } else {
+          console.error("Failed to fetch cities");
+        }
+      } catch (err) {
+        console.error("Error fetching cities", err);
+      }
+    };
+    fetchCities();
+  },[])
   // ✅ جلب البيانات بعد توفر userId و token
   useEffect(() => {
     if (!userId || !token) return;
@@ -230,23 +245,10 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
       }
     };
 
-    const fetchCities = async () => {
-      try {
-        const res = await fetch(`https://citypulse.runasp.net/api/School/ALlcities`);
-        if (res.ok) {
-          const data = await res.json();
-          setCity(data.$values);
-        } else {
-          console.error("Failed to fetch cities");
-        }
-      } catch (err) {
-        console.error("Error fetching cities", err);
-      }
-    };
+    
 
     fetchOrders();
     fetchAppointments();
-    fetchCities();
   }, [token, userId]);
 
   // ✅ Fetch meals by restaurant id

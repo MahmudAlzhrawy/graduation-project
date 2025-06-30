@@ -1,5 +1,4 @@
 "use client";
-import { FaSpinner } from "react-icons/fa";
 import MainHeaderForEachComponent, {
   ImainRestaurantHeader,
 } from "../mainHeaderForEachComponent";
@@ -27,7 +26,7 @@ interface City {
 export default function Hospitals() {
   const mainHeaderForRestaurantComponent: ImainRestaurantHeader = {
     image: "url('/assets/hospitals/hospital.jpeg')",
-    text: "Hospitals In Assiut Government",
+    text: "Hospitals",
   };
 
   const [hospitals, setHospitals] = useState<Hospitals[]>([]);
@@ -133,8 +132,7 @@ export default function Hospitals() {
       ) : (
         <div className="spin h-96">
           <div className="flex justify-center h-full items-center">
-            <h2 className="text-5xl text-blue-700">Loading..</h2>
-            <FaSpinner className="animate-spin text-blue-500 text-6xl ml-4" />
+            <h2 className="text-5xl text-blue-700">Not Founed</h2>
           </div>
         </div>
       )}
