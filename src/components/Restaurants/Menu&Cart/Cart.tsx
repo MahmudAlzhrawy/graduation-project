@@ -62,7 +62,7 @@ export default function CartItems({ restoId }: any) {
                 onClick={() => {
                   if (
                     store.getState().auth.userToken !== null &&
-                    store.getState().auth.user?.roles === "User"
+                  
                   ) {
                     setCheckoutClick((el) => !el);
                   } else {
