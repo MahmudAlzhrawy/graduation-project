@@ -289,7 +289,7 @@ function DoctorReservation(props: Props) {
               <div className="w-40 h-40 rounded-full border border-gray-200 -translate-y-8 lg:border lg:border-gray-700">
                 <img
                   className="w-full h-full rounded-full"
-                  src={doctorReservation.profileImage}
+                  src={`https://citypulse.runasp.net/images/doctors${doctorReservation.profileImage}`}
                   alt={"Doctor Profile"}
                 />
               </div>

@@ -512,7 +512,7 @@ const { SearchDoctors, setSearchDoctors } = context;
               <div className="w-[30%] h-full flex items-center justify-center">
                 <img
                   className="w-40 h-40 border border-gray-300 rounded-full"
-                  src={props.DoctorObject.profileImage}
+                  src={`https://citypulse.runasp.net/images/doctors${props.DoctorObject.profileImage}`}
                   alt={props.DoctorObject.doctorName}
                   title={props.DoctorObject.doctorName}
                 />

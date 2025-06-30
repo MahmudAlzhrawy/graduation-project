@@ -78,7 +78,7 @@ function Doctors(props: Props) {
             <div className="bg-white rounded-tl-xl rounded-tr-xl w-[20%] max-h-full flex items-center justify-center">
               <img
                 className="w-40 h-40 border border-gray-300 rounded-full"
-                src={doctor.profileImage}
+                src={`https://citypulse.runasp.net/images/doctors${doctor.profileImage}`}
                 alt={doctor.doctorName}
                 title={doctor.doctorName}
               />
