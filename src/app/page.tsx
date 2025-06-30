@@ -187,7 +187,7 @@ export default function Home() {
                     {serv.Name}
                   </h1>
                   <p className="text-sm leading-5   text-gray-700 px-2 text-left  ">
-                    {serv.Content}
+                    {serv.Content.length > 50 ?serv.Content.slice(0, 50) + "...": serv.Content}
                   </p>
                 </div>
               </div>

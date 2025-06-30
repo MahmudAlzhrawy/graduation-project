@@ -37,9 +37,9 @@ function Restaurant(props: Props) {
   }, [props.restaurantDescription]);
 
   return (
-    <div className="pt-1 pb-4 hover:brightness-75 duration-500 overflow-hidden">
+    <div className="pt-1 pb-4 rounded-xl hover:shadow-lg  hover:brightness-75 duration-500 overflow-hidden">
         <img
-        className=" h-[300px] hover:scale-110 duration-700 ease-in-out w-full  "
+        className=" h-[300px] hover:scale-110 duration-700 ease-in-out w-full object-cover overflow-hidden "
           src={`http://citypulse.runasp.net/images/Restaurants/${props.restaurantImage}`}
           alt={props.restaurantName}
         />
