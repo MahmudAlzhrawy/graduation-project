@@ -92,16 +92,19 @@ const RegisterComponent: React.FC = () => {
         submitButtonText: "Loading...",
         isSubmitted: true,
       });
-      try {
-        const user: RegisterModel = {
-          nameU: values.name,
-          userName: values.userName,
-          email: values.email,
-          phoneNumber: values.phoneNumber,
-          password: values.password,
-          address: values.address,
-        };
 
+      const user: RegisterModel = {
+        nameU: values.name.trim(),
+        userName: values.userName.trim(),
+        email: values.email.trim(),
+        phoneNumber: values.phoneNumber.trim(),
+        password: values.password.trim(),
+        address: values.address.trim(),
+      };
+
+      console.log("📦 Payload:", user);
+
+      try {
         const response = await fetch(
           "https://citypulse.runasp.net/api/User/register",
           {
@@ -112,46 +115,34 @@ const RegisterComponent: React.FC = () => {
         );
 
         if (!response.ok) {
-          if (response.status === 400) {
-            const data = await response.json();
-            if (data.errors?.PhoneNumber) {
-              setFieldError("phoneNumber", data.errors.PhoneNumber[0]);
+          const errorText = await response.text();
+          console.error("❌ Server Error:", errorText);
+
+          // في حال كانت الاستجابة 400 مع وجود أخطاء تحقق من الباك
+          try {
+            const errorData = JSON.parse(errorText);
+            if (errorData.errors?.PhoneNumber) {
+              setFieldError("phoneNumber", errorData.errors.PhoneNumber[0]);
             }
-          }
+          } catch {}
+
           throw new Error("Failed to register");
         }
 
         toast.success("Registration successful!");
-        setSubmitButtonStatus({
-          loading: false,
-          submitButtonText: "Submitted successfully",
-          isSubmitted: true,
-        });
         setTimeout(() => {
-          setSubmitButtonStatus({
-            loading: false,
-            submitButtonText: "Register",
-            isSubmitted: false,
-          });
           resetForm();
           router.push("/login");
         }, 2000);
       } catch (error) {
         toast.error("Registration failed!");
-        console.error("Error:", error);
+        console.error("❌ Error:", error);
+      } finally {
         setSubmitButtonStatus({
           loading: false,
-          submitButtonText: "Failed to register",
-          isSubmitted: true,
+          submitButtonText: "Register",
+          isSubmitted: false,
         });
-        setTimeout(() => {
-          setSubmitButtonStatus({
-            loading: false,
-            submitButtonText: "Register",
-            isSubmitted: false,
-          });
-          resetForm();
-        }, 2000);
       }
     },
   });
@@ -228,10 +219,7 @@ const RegisterComponent: React.FC = () => {
           ))}
 
           <div>
-            <label
-              htmlFor="address"
-              className="block font-medium text-gray-700"
-            >
+            <label htmlFor="address" className="block font-medium text-gray-700">
               Address <span className="text-red-500">*</span>
             </label>
             <textarea
@@ -282,10 +270,7 @@ const RegisterComponent: React.FC = () => {
           </div>
 
           <div>
-            <label
-              htmlFor="confirmPassword"
-              className="block font-medium text-gray-700"
-            >
+            <label htmlFor="confirmPassword" className="block font-medium text-gray-700">
               Confirm Password <span className="text-red-500">*</span>
             </label>
             <input
@@ -299,12 +284,11 @@ const RegisterComponent: React.FC = () => {
               onPaste={(e) => e.preventDefault()}
               className="mt-1 w-full border rounded-md px-4 py-2 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
-            {formik.touched.confirmPassword &&
-              formik.errors.confirmPassword && (
-                <span className="text-sm text-red-600">
-                  {formik.errors.confirmPassword}
-                </span>
-              )}
+            {formik.touched.confirmPassword && formik.errors.confirmPassword && (
+              <span className="text-sm text-red-600">
+                {formik.errors.confirmPassword}
+              </span>
+            )}
           </div>
 
           <SubmitButton
