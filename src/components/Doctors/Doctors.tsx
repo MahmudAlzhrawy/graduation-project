@@ -289,7 +289,75 @@ const { SearchDoctors, setSearchDoctors } = context;
     >
       <div
        ref={doctorfilterRef}
-  
+  className={
+    scrollPosition >= 2400 &&
+    visiableCount === 5 &&
+    getAllDoctors.length >= 1 &&
+    openTitle &&
+    openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-3 z-10"
+      : scrollPosition >= 2400 &&
+        visiableCount === 5 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-32 z-10"
+      : scrollPosition >= 2400 &&
+        visiableCount === 5 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-20 z-10"
+      : scrollPosition >= 435 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
+      : scrollPosition >= 300 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition >= 220 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
+      : scrollPosition >= 300 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        openTitle &&
+        !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[23px] z-10"
+      : scrollPosition >= 435 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[100px] z-10"
+      : scrollPosition >= 230 &&
+        visiableCount === 1 &&
+        getAllDoctors.length >= 1 &&
+        !openTitle &&
+        openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[200px] z-10"
+      : scrollPosition >= 550 && !openTitle && !openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[300px] z-10"
+      : scrollPosition >= 1 && openTitle && getAllDoctors.length === 0
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition >= 550
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[250px] z-10"
+      : scrollPosition >= 550 && openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-0 z-10"
+      : scrollPosition < 550 && openExaminationFee
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed bottom-5 z-10"
+      : scrollPosition >= 550 && openTitle
+      ? "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed top-[50px] z-10"
+      : "w-[15%] flex flex-col gap-y-2 ml-[10%] fixed z-10"
+  }
       >
         <h3 className="text-gray-400 text-sm flex flex-row items-center justify-center">
           <span
