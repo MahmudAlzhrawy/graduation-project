@@ -146,7 +146,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
       if (existingItem) {
         Toast.fire({
           title: "This meal is already served.",
-          icon: "success",
+          icon: "warning",
           showConfirmButton: true,
           timer: 1500,
         });
