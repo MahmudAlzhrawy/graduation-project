@@ -1,0 +1,79 @@
+.container {
+    @apply mb-20 mx-auto w-[60%] xl:w-[40%] rounded-md pb-4
+}
+
+.main {
+    @apply h-[1030px] w-full bg-cover
+}
+
+
+.frm {
+    @apply border rounded-md shadow-lg w-full pt-2 items-center translate-y-2
+}
+
+.grouping {
+    @apply leading-[20px] mb-4
+}
+
+.each_in_grouping {
+    @apply w-[95%]
+}
+
+.each_in_grouping label#confirmEmailLabel {
+    @apply mb-2 w-full block font-bold font-serif text-sm
+}
+
+.each_in_grouping label:not(#confirmEmailLabel) {
+    @apply mb-2 w-full block font-bold font-serif text-lg
+}
+
+.each_in_grouping input, .each_in_grouping textarea {
+    @apply bg-slate-100 border-b rounded-lg pl-2 py-3 w-full focus:shadow-md focus:shadow-blue-400 focus:border-blue-600
+}
+
+.lepinp {
+    @apply leading-[10px] mb-4
+}
+
+.lepinp label {
+    @apply mb-2 w-full block font-bold font-serif text-lg
+}
+
+.errors {
+    @apply mt-2 w-full block font-medium font-serif text-base text-red-600
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+.home.show::before {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+    .main {
+        @apply h-full w-full bg-cover
+    }
+
+    .AllElements {
+        @apply flex flex-col
+    }
+
+    button[type="submit"] {
+        @apply translate-x-0
+    }
+
+    .home::before {
+        @apply h-full
+    }
+}

@@ -1,0 +1,41 @@
+[
+    {
+                "id":1,
+                "mealId":20,
+                "mealName":"pizza hut",
+                "description":"wsxcderfvbgt vfrg",
+                "mealImage":"/1.jpeg",
+                "price":12.10,
+                "restaurantId":6
+
+    },
+    {
+        "id":2,
+        "mealId":67,
+        "mealName":"pizza seafood",
+        "description":"wsxcderfvbgt vfrg",
+        "mealImage":"/1.jpeg",
+        "price":12.10,
+        "restaurantId":3
+    },
+    {
+        "id":3,
+        "mealId":0,
+        "mealName":"pizza",
+        "description":"wsxcderfvbgt vfrg",
+        "mealImage":"/1.jpeg",
+        "price":12.10,
+        "restaurantId":3
+
+}, 
+{
+    "id":4,
+    "mealId":9,
+    "mealName":"hot dog",
+    "description":"wsxcderfvbgt vfrg",
+    "mealImage":"/1.jpeg",
+    "price":12.10,
+    "restaurantId":5
+
+}
+]

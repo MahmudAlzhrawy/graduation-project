@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fdf8f8;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.btn{
+  @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4;
+}
+.legend{
+  @apply text-left px-1 italic text-blue-900 text-sm font-semibold mb-5
+}
+.filset{
+  @apply flex pb-10  px-2 mt-5 border-[3px] rounded-lg  border-blue-500 
+}

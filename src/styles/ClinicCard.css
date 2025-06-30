@@ -1,0 +1,12 @@
+.clinicCard::after {
+    content: "Book Appointment";
+    @apply z-20 text-white text-center h-56 bg-black w-full opacity-0 translate-y-[0] flex items-center justify-center transition-all duration-1000 ease-out;
+}
+
+.clinicCard:hover {
+    @apply rounded-br-none rounded-bl-none;
+}
+
+.clinicCard:hover::after {
+    @apply opacity-100 translate-y-[90%];
+}

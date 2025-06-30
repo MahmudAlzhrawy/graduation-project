@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name": "Mahmud Nagi",
+        "major":"CS",
+        "technology":"Front-end developer",
+        "email":"mahmudalzhrawy@gmail.com",
+        "linkedIn": "http://iowejrfijnb.com",
+        "imageUrl":"http://iowejrfijnb.com"
+    },
+    {
+        "id":2,
+        "name": "Salem Eissa",
+        "major":"SE",
+        "technology":"Front-end developer",
+        "email":"Salem@gmail.com",
+        "linkedIn": "http://iowejrfijnb.com",
+        "imageUrl":"http://iowejrfijnb.com"
+    },
+    {
+        "id":3,
+        "name": "Omar Karam",
+        "major":"IS",
+        "technology":"Back-end developer",
+        "email":"Omarkaram@gmail.com",
+        "linkedIn": "http://iowejrfijnb.com",
+        "imageUrl":"http://iowejrfijnb.com"
+    },
+    {
+        "id":4,
+        "name": "Essa Mohsen",
+        "major":"CS",
+        "technology":"Back-end developer",
+        "email":"Essa@gmail.com",
+        "linkedIn": "http://iowejrfijnb.com",
+        "imageUrl":"http://iowejrfijnb.com"
+    }
+]

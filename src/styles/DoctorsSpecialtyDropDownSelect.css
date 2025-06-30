@@ -1,0 +1,43 @@
+.select-box {
+    @apply flex flex-col
+}
+
+.input-container {
+    @apply mb-1 relative
+}
+
+.selected {
+    @apply w-full h-full py-3 px-4 shadow-none cursor-pointer bg-gray-50 border border-gray-300 text-xl text-gray-700 focus:cursor-pointer focus:border-gray-300 focus:shadow-md focus:shadow-gray-300 placeholder:text-black placeholder:text-xl selection:text-white selection:bg-blue-900
+}
+
+.arrow {
+    @apply absolute top-[30%] right-2 text-2xl
+}
+
+.options-container {
+    @apply z-10 absolute left-0 right-0 top-[100%] overflow-hidden text-gray-700 bg-white w-full rounded-md transition-all duration-500 opacity-0 hidden
+}
+
+.options-container::-webkit-scrollbar {
+    @apply bg-gray-300 w-5
+}
+
+.options-container::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 h-24 w-2
+}
+
+.options-container.active {
+    @apply overflow-auto border border-gray-700 shadow-md shadow-gray-300 opacity-100 block
+}
+
+.option {
+    @apply text-gray-700 py-3 px-6 cursor-pointer
+}
+
+.option.active {
+    @apply bg-blue-200
+}
+
+.option:hover {
+    @apply bg-blue-200
+}

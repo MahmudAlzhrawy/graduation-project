@@ -1,0 +1,15 @@
+.options-container {
+    @apply z-10 absolute left-0 right-0 top-[120%] overflow-hidden text-gray-700 bg-white w-full border border-gray-300 rounded-md transition-all duration-500 opacity-0 hidden
+}
+
+.options-container::-webkit-scrollbar {
+    @apply bg-gray-300 w-5
+}
+
+.options-container::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 h-24 w-2
+}
+
+.options-container.active {
+    @apply overflow-auto border border-gray-700 shadow-md shadow-gray-300 opacity-100 block
+}

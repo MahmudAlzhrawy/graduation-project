@@ -1,0 +1,8 @@
+[
+    {"id": 1, "name":"Asmaa Bint Abi Bakr Preparatory School for Girls" , "type":"Government schools", "address":"Jisr Al-Saliba Street, Al-Hamra Village, Assiut, and Assiut.", "phone_number": "0882342235" },
+    {"id": 2, "name":"Ismail Al-Qabbani Preparatory School for Boys" , "type":"Government schools", "address":"Al-Thawra St., Assiut and Assiut.", "phone_number": "0882142735" },
+    {"id": 3, "name":"Assiut Girls Secondary School" , "type":"Government schools", "address":"First Hamra, Assiut, and Assiut.", "phone_number": "0882542935" },
+    {"id": 4, "name":"Al-Iman Joint Primary School" , "type":"Government schools", "address":"Al-Bosta St. - Al-Walidiya area, Assiut, Assiut.", "phone_number": "0885292585" },
+    {"id": 5, "name":"Al-Hamra Preparatory Joint Vocational School for Girls" , "type":"Government schools", "address":"Riyadh St., Assiut and Assiut.", "phone_number": "0885342285" },
+    {"id": 6, "name":"Al Khayyat Girls Secondary School" , "type":"Government schools", "address":"Saad Zaghloul St., Assiut, Assiut.", "phone_number": "0885672388" }
+  ]

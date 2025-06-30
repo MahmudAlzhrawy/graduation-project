@@ -1,0 +1,27 @@
+
+[
+    {
+        "id":1,
+        "imgUrl":"school.png",
+        "Name":"Schools",
+        "Content":"Schools can benefit from sharing important information with students, parents, and the community through our platformthat can Facilitate communication between schools and parents can improve parent engagement and involvement in their children's education.We partner with local restaurants to deliver healthy, delicious and fresh meals to students and staff at private and public schools in Assuit in Egypt."
+    },
+    {
+        "id":2,
+        "imgUrl":"hospital.png",
+        "Name":"Hospitals",
+        "Content":"Facilitate communication between healthcare providers and patients regarding some informations about famous hospitals in Assuit in Egypt. Hospitals can share important health information and tips with patients through our platform."
+    },
+    {
+        "id":3,
+        "imgUrl":"resto.png",
+        "Name":"Restaurants",
+        "Content":"We provide an opportunity for guaranteed, consistent, net-new revenue along with new marketing opportunities targeted towards local communities.We can facilitate communication between  partners that can engage with their target audience effectively."
+    },
+    {
+        "id":4,
+        "imgUrl":"a clinic.png",
+        "Name":"Clincs",
+        "Content":"our platform can help clinics manage appointments efficiently and reduce no-shows.Facilitate communication between healthcare providers and patients regarding appointments, prescriptions, and follow-up care(treatements)."
+    }
+]

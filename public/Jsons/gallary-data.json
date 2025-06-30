@@ -1,0 +1,83 @@
+[
+    {
+   "id": 1,
+   "name": "First_School",
+    "path": "/assets/gallary/First_School.jpg"
+},
+{
+   "id": 2,
+   "name": "Second_School",
+    "path": "/assets/gallary/Second_School.jpg"
+},
+{
+   "id": 3,
+   "name": "Third_School",
+    "path": "/assets/gallary/Third_School.jpg"
+},
+{
+   "id": 4,
+   "name": "Fourth_School",
+    "path": "/assets/gallary/Fourth_School.jpg"
+},
+{
+   "id": 5,
+   "name": "Fiveth_School",
+    "path": "/assets/gallary/Fiveth_School.jpg"
+},
+{
+   "id": 6,
+   "name": "Sixth_School",
+    "path": "/assets/gallary/Sixth_School.jpg"
+},
+{
+   "id": 7,
+   "name": "Al-Ramad_Hospital_in_Assiut",
+    "path": "/assets/gallary/Al-Ramad_Hospital_in_Assiut.jfif"
+},
+{
+   "id": 8,
+   "name": "Assiut_University_Student_Hospital",
+    "path": "/assets/gallary/Assuit_University_Student_Hospital.jpg"
+},
+{
+   "id": 9,
+   "name": "Assiut_University_Trauma_Hospital",
+    "path": "/assets/gallary/Trauma_Hospital_Assuit_University.jpg"
+},
+
+{
+   "id": 11,
+   "name": "Rouvan_Hospital",
+    "path": "/assets/gallary/Rouvan_Hospital.png"
+},
+{
+   "id": 12,
+   "name": "El-Hakeem Clinics",
+    "path": "/assets/gallary/El-Hakeem Clinics.png"
+},
+{
+   "id": 13,
+   "name": "REEM_Clinic",
+    "path": "/assets/gallary/REEM_Clinic.jpg"
+},
+{
+   "id": 14,
+   "name": "Kasr_Clinics",
+    "path": "/assets/gallary/Kasr_Clinics.png"
+},
+{
+   "id": 15,
+   "name": "BAZOOKA_Restaurant",
+    "path": "/assets/gallary/BAZOOKA_Restaurant.jpg"
+},
+{
+   "id": 16,
+   "name": "COOK DOOR_Restaurant",
+    "path": "/assets/gallary/COOK DOOR_Restaurant.jpg"
+},
+{
+   "id": 17,
+   "name": "GOURMET_Restaurant",
+    "path": "/assets/gallary/GOURMET_Restaurant.jpg"
+}
+]
