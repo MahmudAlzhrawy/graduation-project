@@ -140,7 +140,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
     }
     setCartItems((prevCart) => {
       const existingItem = prevCart.find(
-        (item) => item.mealId === meal.mealId && item.restaurantId === meal.restaurantId
+        (item) => item.mealId === meal.mealId && item.restaurantId === meal.restaurantId && item.userId === userId
       );
 
       if (existingItem) {
