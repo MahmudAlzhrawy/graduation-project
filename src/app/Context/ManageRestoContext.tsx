@@ -22,6 +22,7 @@ interface Meal {
   price: number;
   mealImage: string;
   restaurantId: number;
+  userId: string | null;
 }
 interface order {
   userId: number;
@@ -131,7 +132,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
         });
         return prevCart.map((item) =>
           item.mealId === meal.mealId
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + 1, userId: userId }
             : item
         );
       } else {
@@ -165,8 +166,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
   };
 
   const clearCart = () => {
-    localStorage.removeItem("cart");
-    setCartItems([]);
+    
   };
   useEffect(() => {
     const fetchCities = async () => {

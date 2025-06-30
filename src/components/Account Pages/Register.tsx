@@ -65,9 +65,9 @@ const RegisterComponent: React.FC = () => {
       address: "",
     },
     validationSchema: Yup.object().shape({
-      name: Yup.string().required("Name is required"),
+      name: Yup.string().required("Name is required").min(5, "At least 5 characters"),
       phoneNumber: Yup.string().required("Phone number is required"),
-      userName: Yup.string()
+      userName: Yup.string().min(5, "At least 5 characters")
         .required("Username is required")
         .test("unique-username", "Username is already taken", validateUsername),
       email: Yup.string()

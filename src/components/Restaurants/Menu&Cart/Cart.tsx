@@ -13,17 +13,26 @@ interface Meal {
   price: number;
   mealImage: string;
   restaurantId: number;
+  userId: string | null;
 }
 
 export default function CartItems({ restoId }: any) {
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [checkoutclick, setCheckoutClick] = useState<boolean>(false);
+  const [userId, setUserId] = useState<string | null>(null);
+
+
   const { cartItems, removeItemFromCart } = useContext(ManageRestoContext);
 
-  const filterd = cartItems.filter((item) => item.restaurantId == restoId);
+  const filterd = cartItems.filter((item) => item.restaurantId == restoId && item.userId === userId); ;
   const mealIds = filterd.map((meal) => meal.id);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUserId = localStorage.getItem("userId");
+      setUserId(storedUserId);
+    }
+
     setTotalPrice(
       filterd.reduce((total, item) => total + item.price * item.quantity, 0)
     );
