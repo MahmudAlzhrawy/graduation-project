@@ -14,20 +14,26 @@ interface Meal {
   restaurantId: number;
 }
 export default function Menu({ restoId }: any) {
+  const[userId,setUserId]=useState<string|null>(null);
   const [clicked, setClicked] = useState<boolean>(() => {
     return JSON.parse(localStorage.getItem("Clicked") || "false");
   });
-  useEffect(() => {
+ useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUserId = localStorage.getItem("userId");
+      setUserId(storedUserId);
+    }
     setID(restoId);
   }, [restoId]);
   useEffect(() => {
     localStorage.setItem("Clicked", JSON.stringify(clicked));
+
   }, [clicked]);
   const { cartItems, menuItems, setID, addItemToCart } =
     useContext(ManageRestoContext);
 
   //const filterd= menuItems.filter((item:Meal)=>item.restaurantId == restoId)
-  const cartfilterd = cartItems.filter((item) => item.restaurantId == restoId);
+  const cartfilterd = cartItems.filter((item) => item.restaurantId == restoId &&item.userId == userId);
 
   return (
     <div
