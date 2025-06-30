@@ -22,6 +22,17 @@ interface Meal {
   price: number;
   mealImage: string;
   restaurantId: number;
+  
+}
+interface cartMeal {
+  id: number;
+  quantity: number;
+  mealId: number;
+  mealName: string;
+  description: string;
+  price: number;
+  mealImage: string;
+  restaurantId: number;
   userId: string | null;
 }
 interface order {
@@ -62,7 +73,7 @@ interface ManageRestoType {
   appointments: Appointment[];
   orders: order[];
   counter: number;
-  cartItems: Meal[];
+  cartItems: cartMeal[];
   menuItems: Meal[];
   setID: Dispatch<SetStateAction<any>>;
   addItemToCart: (meal: Meal) => void;
@@ -88,7 +99,7 @@ export const ManageRestoContext = createContext<ManageRestoType>({
 export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ children }) => {
   const [menuItems, setMenuItems] = useState<Meal[]>([]);
   const [id, setID] = useState<any>();
-  const [cartItems, setCartItems] = useState<Meal[]>([]);
+  const [cartItems, setCartItems] = useState<cartMeal[]>([]);
   const [counter, setCounter] = useState<number>(0);
   const [orders, setOrders] = useState<order[]>([]);
   const [appointments, setAppointment] = useState<Appointment[]>([]);
@@ -118,6 +129,15 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
   }, [cartItems]);
 
   const addItemToCart = (meal: Meal) => {
+    if (!userId || !token) {
+      Toast.fire({
+        title: "Please log in to add items to the cart.",
+        icon: "warning",
+        showConfirmButton: true,
+        timer: 1500,
+      });
+      return;
+    }
     setCartItems((prevCart) => {
       const existingItem = prevCart.find(
         (item) => item.mealId === meal.mealId && item.restaurantId === meal.restaurantId
@@ -132,7 +152,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
         });
         return prevCart.map((item) =>
           item.mealId === meal.mealId
-            ? { ...item, quantity: item.quantity + 1, userId: userId }
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       } else {
@@ -142,7 +162,7 @@ export const ManageRestoProvider: React.FC<ManageRestoProviderProps> = ({ childr
           showConfirmButton: true,
           timer: 1500,
         });
-        return [...prevCart, { ...meal, quantity: 1 }];
+        return [...prevCart, { ...meal, quantity: 1,userId: userId }];
       }
     });
   };
