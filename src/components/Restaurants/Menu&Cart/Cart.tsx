@@ -61,7 +61,7 @@ export default function CartItems({ restoId }: any) {
               <button
                 onClick={() => {
                   if (
-                    store.getState().auth.userToken !== null &&
+                    store.getState().auth.userToken !== null 
                   
                   ) {
                     setCheckoutClick((el) => !el);
