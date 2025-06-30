@@ -89,13 +89,15 @@ export default function CheckoutService({
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                userId: store.getState().auth.user?.id,
-                amount: totalPrice,
-                paymentMethod: "Manual",
-                status: "Pending",
-                transactionType: "Order",
-                referenceId: orderId,
-              }),
+              userId: store.getState().auth.user?.id,
+              amount: totalPrice,
+              paymentMethod: "Manual",
+              status: "Pending",
+              transactionType: "Order",
+              referenceId: orderId,
+              location: userObject.address, // ✅ تمت إضافته هنا
+            }),
+
             }
           );
 
