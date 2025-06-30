@@ -28,7 +28,13 @@
         <div className="flex justify-between items-center px-4">
             <div
             className="flex items-center text-center cursor-pointer"
-            onClick={() => router.push(`/services/restaurants/${restoId}/cart`)}
+            onClick={() => {
+                    if (!restoId) {
+                        console.error("Restaurant ID is missing.");
+                        return;
+                    }
+                    router.push(`/services/restaurants/${restoId}/cart`);
+            }}
             >
             {pathname!.includes("/menu") && (
                 <>
