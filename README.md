@@ -3,7 +3,7 @@
 A smart and modern web platform designed to provide **city residents** with access to essential **services**, including restaurants, schools, hospitals, and much more – all in one place.  
 The system includes multiple dashboards and user roles (Admin – Restaurant Admin – General Admin) for full control and scalability.
 
-> 💡 Built as a final year graduation project for the Faculty of Computers and Information, Assiut University – Class of 2025.
+> 💡 Built as a final year graduation project for the Faculty of Computers and Information, Assiut University – Class of 2025 .
 
 ---
 
